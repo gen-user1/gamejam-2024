@@ -22,7 +22,8 @@ public class InfiniteWorld : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        currentWallL = wallsL[0];
+        currentWallR = wallsR[0];
     }
 
     // Update is called once per frame
@@ -36,12 +37,15 @@ public class InfiniteWorld : MonoBehaviour
         );*/
 
 
-        if (sub.transform.position.y < currentWallL.transform.position.y - 10) {
+        if (sub.transform.position.y < currentWallL.transform.position.y) {
             GameObject newWallL = GameObject.Instantiate(wallsL[0]);
             GameObject newWallR = GameObject.Instantiate(wallsR[0]);
 
             newWallL.transform.position = currentWallL.transform.position - new Vector3(0, 10, 0);
             newWallR.transform.position = currentWallR.transform.position - new Vector3(0, 10, 0);
+
+            currentWallL = newWallL;
+            currentWallR = newWallR;
         }    
     }
 }
