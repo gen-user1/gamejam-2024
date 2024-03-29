@@ -34,7 +34,7 @@ namespace ScriptableObjects
             }
         }
         
-        [SerializeField] private int depth = 100;
+        [SerializeField] private int depth;
 
         public Action<int> OnDepthlChange;
 
@@ -48,7 +48,7 @@ namespace ScriptableObjects
             }
         }
 
-        [SerializeField] private int safeDepthLevel = 100;
+        [SerializeField] private int safeDepthLevel = -6;
 
         public Action<int> OnSafeDepthLevelChange;
 
@@ -62,7 +62,7 @@ namespace ScriptableObjects
             }
         }
         
-        [SerializeField] private int resistance = 100;
+        [SerializeField] private int resistance = 1;
 
         public Action<int> OnResistanceChange;
 
