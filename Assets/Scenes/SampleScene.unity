@@ -2408,6 +2408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1996605100}
   - component: {fileID: 1996605101}
+  - component: {fileID: 1996605107}
   - component: {fileID: 1996605103}
   - component: {fileID: 1996605102}
   - component: {fileID: 1996605104}
@@ -2488,7 +2489,7 @@ Rigidbody:
   m_GameObject: {fileID: 1996605099}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -2547,6 +2548,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourcesState: {fileID: 11400000, guid: 4d1a2d03029ef473e8b9f75d0ddb819b, type: 2}
+--- !u!114 &1996605107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996605099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f5695ddf78c25fabc786b3581c0999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 963194227}
+  speed: 10
 --- !u!1 &2026063769
 GameObject:
   m_ObjectHideFlags: 0
@@ -2704,7 +2719,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2133439925}
-  - component: {fileID: 2133439926}
   m_Layer: 0
   m_Name: Submarine
   m_TagString: Untagged
@@ -2729,21 +2743,6 @@ Transform:
   - {fileID: 963194228}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2133439926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2133439920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1f5695ddf78c25fabc786b3581c0999, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidbodyComponent: {fileID: 1996605103}
-  camera: {fileID: 963194227}
-  speed: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

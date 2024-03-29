@@ -1,23 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
-    [SerializeField] private Rigidbody rigidbodyComponent;
     [SerializeField] private new Camera camera;
     [SerializeField] private float speed = 3;
+    
+    private Rigidbody rigidbodyComponent;
 
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
-
+        rigidbodyComponent = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        var vertialAxis = Input.GetAxis("Vertical");
         var horizontalAxis = Input.GetAxis("Horizontal");
 
         var cameraTransform = camera.transform;
@@ -25,21 +23,23 @@ public class MovementController : MonoBehaviour
         cameraTransform.position = new Vector3(cameraPosition.x, rigidbodyComponent.position.y, cameraPosition.z);
         RotateSubmarine(horizontalAxis);
     }
-    
+
     private void FixedUpdate()
     {
-        var vertialAxis = Input.GetAxis("Vertical");
+        var verticalAxis = Input.GetAxis("Vertical");
         var horizontalAxis = Input.GetAxis("Horizontal");
-        rigidbodyComponent.velocity = new Vector3(horizontalAxis * speed, vertialAxis * speed, 0);
+        rigidbodyComponent.AddForce(Vector3.up * (verticalAxis * speed));
+        rigidbodyComponent.AddForce(Vector3.right * (horizontalAxis * speed));
     }
 
-    private void RotateSubmarine(float horizontalAxis) 
+    private void RotateSubmarine(float horizontalAxis)
     {
         Vector3 submarineRotationVelocity = new Vector3(0, 0, 0);
-        if (horizontalAxis > 0 && rigidbodyComponent.rotation.y < 0.8) 
+        if (horizontalAxis > 0 && rigidbodyComponent.rotation.y < 0.8)
         {
             submarineRotationVelocity = new Vector3(0, 100, 0);
         }
+
         if (horizontalAxis < 0 && rigidbodyComponent.rotation.y > -0.8)
         {
             submarineRotationVelocity = new Vector3(0, -100, 0);
