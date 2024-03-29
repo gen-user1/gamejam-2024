@@ -22,7 +22,8 @@ public class InfiniteWorld : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        currentWallL = wallsL[0];
+        currentWallR = wallsR[0];
     }
 
     // Update is called once per frame
@@ -42,6 +43,9 @@ public class InfiniteWorld : MonoBehaviour
 
             newWallL.transform.position = currentWallL.transform.position - new Vector3(0, 10, 0);
             newWallR.transform.position = currentWallR.transform.position - new Vector3(0, 10, 0);
+
+            currentWallL = newWallL;
+            currentWallR = newWallR;
         }    
     }
 }
