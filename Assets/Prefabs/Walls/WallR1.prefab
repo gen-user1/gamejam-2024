@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2702886633717560983}
   - component: {fileID: 2108115724649462964}
   m_Layer: 0
-  m_Name: WallR
-  m_TagString: Untagged
+  m_Name: WallR1
+  m_TagString: walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 8778561903342565547}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12, y: -3.0311, z: 0}
-  m_LocalScale: {x: 2, y: 16.062, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
