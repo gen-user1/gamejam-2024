@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3483c4390ecd34413a499792ec6f0e56, type: 3}
-  m_Name: pressure
+  m_Name: SubmarineState
   m_EditorClassIdentifier: 
   value: 0
