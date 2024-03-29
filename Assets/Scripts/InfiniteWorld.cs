@@ -37,7 +37,7 @@ public class InfiniteWorld : MonoBehaviour
         );*/
 
 
-        if (sub.transform.position.y < currentWallL.transform.position.y - 10) {
+        if (sub.transform.position.y < currentWallL.transform.position.y) {
             GameObject newWallL = GameObject.Instantiate(wallsL[0]);
             GameObject newWallR = GameObject.Instantiate(wallsR[0]);
 
