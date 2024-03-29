@@ -33,7 +33,7 @@ namespace ScriptableObjects
                 OnHealthChange?.Invoke(value);
             }
         }
-        
+
         [SerializeField] private int depth;
 
         public Action<int> OnDepthlChange;
@@ -48,7 +48,7 @@ namespace ScriptableObjects
             }
         }
 
-		//Set correct default value when level will be finally done.
+        //Set correct default value when level will be finally done.
         [SerializeField] private int safeDepthLevel = -6;
 
         public Action<int> OnSafeDepthLevelChange;
@@ -62,8 +62,8 @@ namespace ScriptableObjects
                 OnSafeDepthLevelChange?.Invoke(value);
             }
         }
-        
-		//Set correct default value when level will be finally done.
+
+        //Set correct default value when level will be finally done.
         [SerializeField] private int resistance = 1;
 
         public Action<int> OnResistanceChange;
