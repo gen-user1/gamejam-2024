@@ -36,7 +36,7 @@ namespace ScriptableObjects
         
         [SerializeField] private int depth = 100;
 
-        public Action<int> onDepthlChange;
+        public Action<int> OnDepthlChange;
 
         public int Depth
         {
@@ -44,13 +44,13 @@ namespace ScriptableObjects
             set
             {
                 depth = value;
-                onDepthlChange?.Invoke(value)
+                OnDepthlChange?.Invoke(value);
             }
         }
 
         [SerializeField] private int safeDepthLevel = 100;
 
-        public Action<int> onSafeDepthLevelChange;
+        public Action<int> OnSafeDepthLevelChange;
 
         public int SafeDepthLevel
         {
@@ -58,13 +58,13 @@ namespace ScriptableObjects
             set
             {
                 safeDepthLevel = value;
-                onSafeDepthLevelChange?.Invoke(value)
+                OnSafeDepthLevelChange?.Invoke(value);
             }
         }
         
         [SerializeField] private int resistance = 100;
 
-        public Action<int> resistance;
+        public Action<int> OnResistanceChange;
 
         public int Resistance
         {
@@ -72,7 +72,7 @@ namespace ScriptableObjects
             set
             {
                 resistance = value;
-                resistance?.Invoke(value)
+                OnResistanceChange?.Invoke(value);
             }
         }
     }
