@@ -45,7 +45,7 @@ public class MovementController : MonoBehaviour
             submarineRotationVelocity = new Vector3(0, -100, 0);
         }
 
-        Quaternion deltaRotation = Quaternion.Euler(submarineRotationVelocity * Time.fixedDeltaTime);
+        Quaternion deltaRotation = Quaternion.Euler(submarineRotationVelocity * Time.deltaTime);
         rigidbodyComponent.MoveRotation(rigidbodyComponent.rotation * deltaRotation);
     }
 }
