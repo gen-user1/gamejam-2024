@@ -14,13 +14,18 @@ public class SubmarineDamage : MonoBehaviour
     private void ProcessDamage()
     {
         var y = transform.position.y;
-
-        if (y >= 0)
+        
+        //Depth damage logic here:
+        if (y >= 0 || y < submarineState.SafeDepthLevel)
         {
             return;
         }
 
-        var damage = -y;
+        var damage = (y-submarineState.SafeDepthLevel) - submarineState.Resistance;
+        if (damage < 0)
+        {
+            damage = 0;
+        }
         submarineState.Health -= (int)damage;
     }
 }
