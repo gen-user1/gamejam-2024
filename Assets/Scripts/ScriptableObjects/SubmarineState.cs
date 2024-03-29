@@ -48,6 +48,7 @@ namespace ScriptableObjects
             }
         }
 
+		//Set correct default value when level will be finally done.
         [SerializeField] private int safeDepthLevel = -6;
 
         public Action<int> OnSafeDepthLevelChange;
@@ -62,6 +63,7 @@ namespace ScriptableObjects
             }
         }
         
+		//Set correct default value when level will be finally done.
         [SerializeField] private int resistance = 1;
 
         public Action<int> OnResistanceChange;

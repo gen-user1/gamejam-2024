@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   health: 100
+  depth: 100
+  safeDepthLevel: -6
+  resistance: 1
