@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SubmarineState
   m_EditorClassIdentifier: 
   maxHealth: 100
-  health: 100
+  health: 67
   depth: 100
   safeDepthLevel: -6
   resistance: 1
