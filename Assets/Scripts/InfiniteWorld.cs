@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class InfiniteWorld : MonoBehaviour
@@ -18,16 +20,18 @@ public class InfiniteWorld : MonoBehaviour
 
     void Start()
     {
-        currentWallL = Instantiate(wallsL[0], wallsLContainer);
-        currentWallR = Instantiate(wallsR[0], wallsRContainer);
+        wallPointer++;
+        currentWallL = Instantiate(wallsL[wallPointer % wallsL.Count], wallsLContainer);
+        currentWallR = Instantiate(wallsR[wallPointer % wallsR.Count], wallsRContainer);
     }
 
     void Update()
     {
         if (transform.position.y < currentWallL.transform.position.y)
         {
-            var newWallL = Instantiate(wallsL[0], wallsLContainer);
-            var newWallR = Instantiate(wallsR[0], wallsRContainer);
+            wallPointer++;
+            var newWallL = Instantiate(wallsL[wallPointer % wallsL.Count], wallsLContainer);
+            var newWallR = Instantiate(wallsR[wallPointer % wallsR.Count], wallsRContainer);
 
             newWallL.transform.position = currentWallL.transform.position - new Vector3(0, 10, 0);
             newWallR.transform.position = currentWallR.transform.position - new Vector3(0, 10, 0);
