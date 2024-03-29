@@ -5,13 +5,22 @@ public class SubmarineDamage : MonoBehaviour
 {
     [SerializeField] private SubmarineState submarineState;
 
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
+        InvokeRepeating(nameof(ProcessDamage), 0, 1.0f);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void ProcessDamage()
     {
+        var y = transform.position.y;
+
+        if (y >= 0)
+        {
+            return;
+        }
+
+        var damage = -y;
+        submarineState.Health -= (int)damage;
     }
 }
