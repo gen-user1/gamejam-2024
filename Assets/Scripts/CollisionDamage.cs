@@ -1,18 +1,31 @@
 using System.Collections;
-using System.Collections.Generic;
+using ScriptableObjects;
 using UnityEngine;
 
 public class CollisionDamage : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private SubmarineState submarineState;
+    [SerializeField] private int collisionDamage = 5;
+    [SerializeField] private int collisionCooldown = 5;
+    private bool _canApplyDamage = true;
+
+
+    void OnCollisionEnter(Collision collision)
     {
-        
+        if (!collision.transform.CompareTag("walls") || !_canApplyDamage)
+        {
+            return;
+        }
+
+        submarineState.Health -= collisionDamage;
+        _canApplyDamage = false;
+        StartCoroutine(CollisionCooldown());
     }
 
-    // Update is called once per frame
-    void Update()
+
+    IEnumerator CollisionCooldown()
     {
-        
+        yield return new WaitForSeconds(collisionCooldown);
+        _canApplyDamage = true;
     }
 }
