@@ -1,17 +1,14 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class InfiniteWorld : MonoBehaviour
 {
-    public GameObject sub;
+    [SerializeField] private Transform wallsLContainer;
+    [SerializeField] private Transform wallsRContainer;
 
-    public GameObject bg;
+    public List<GameObject> wallsR = new();
 
-    public List<GameObject> wallsR = new List<GameObject>();
-
-    public List<GameObject> wallsL = new List<GameObject>();
+    public List<GameObject> wallsL = new();
 
     private GameObject currentWallL;
 
@@ -19,33 +16,24 @@ public class InfiniteWorld : MonoBehaviour
 
     private int wallPointer = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
-        currentWallL = wallsL[0];
-        currentWallR = wallsR[0];
+        currentWallL = Instantiate(wallsL[0], wallsLContainer);
+        currentWallR = Instantiate(wallsR[0], wallsRContainer);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        /*
-        sub.transform.position -= new Vector3(
-            0,
-            10 * Time.deltaTime,
-            0
-        );*/
-
-
-        if (sub.transform.position.y < currentWallL.transform.position.y - 10) {
-            GameObject newWallL = GameObject.Instantiate(wallsL[0]);
-            GameObject newWallR = GameObject.Instantiate(wallsR[0]);
+        if (transform.position.y < currentWallL.transform.position.y - 10)
+        {
+            var newWallL = Instantiate(wallsL[0], wallsLContainer);
+            var newWallR = Instantiate(wallsR[0], wallsRContainer);
 
             newWallL.transform.position = currentWallL.transform.position - new Vector3(0, 10, 0);
             newWallR.transform.position = currentWallR.transform.position - new Vector3(0, 10, 0);
 
             currentWallL = newWallL;
             currentWallR = newWallR;
-        }    
+        }
     }
 }
