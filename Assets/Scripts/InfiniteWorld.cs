@@ -24,7 +24,7 @@ public class InfiniteWorld : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.y < currentWallL.transform.position.y - 10)
+        if (transform.position.y < currentWallL.transform.position.y)
         {
             var newWallL = Instantiate(wallsL[0], wallsLContainer);
             var newWallR = Instantiate(wallsR[0], wallsRContainer);
