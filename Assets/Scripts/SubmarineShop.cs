@@ -46,13 +46,22 @@ public class SubmarineShop : MonoBehaviour
 
     public void FixSubmarine()
     {
+        if (submarineState.Minerals < fixPrice)
+        {
+            return;
+        }
         submarineState.Health += fixHealthIncrease;
         submarineState.Minerals -= fixPrice;
     }
 
     public void IncreaseResistance()
     {
+        if (submarineState.Minerals1 < resistancePrice)
+        {
+            return;
+        }
         submarineState.Resistance += resistanceIncrease;
         submarineState.Minerals1 -= resistancePrice;
+
     }
 }

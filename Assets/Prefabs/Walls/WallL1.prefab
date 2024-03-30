@@ -33,11 +33,11 @@ Transform:
   - {fileID: 4124464802528218918}
   - {fileID: 3698303368481248180}
   - {fileID: 5269848058920153011}
-  - {fileID: 4735762437325603218}
-  - {fileID: 55267455467691758}
   - {fileID: 5106956192562103029}
   - {fileID: 5290687890109977575}
   - {fileID: 6581557064660651650}
+  - {fileID: 4735762437325603218}
+  - {fileID: 55267455467691758}
   - {fileID: 3256662112016136370}
   - {fileID: 3530882663454697831}
   - {fileID: 3973611893871090588}
@@ -263,6 +263,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock2_LOD0
       objectReference: {fileID: 0}
+    - target: {fileID: 1311939128785062, guid: 7cec8804e22ff6e4592573d5042df101, type: 3}
+      propertyPath: m_TagString
+      value: walls
+      objectReference: {fileID: 0}
     - target: {fileID: 4544157765214884, guid: 7cec8804e22ff6e4592573d5042df101, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.8909588
@@ -421,6 +425,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1_LOD0
       objectReference: {fileID: 0}
+    - target: {fileID: 1825857014754116, guid: 7c251b344139b0e409fb265cc2c3efc3, type: 3}
+      propertyPath: m_TagString
+      value: walls
+      objectReference: {fileID: 0}
     - target: {fileID: 4524159465529112, guid: 7c251b344139b0e409fb265cc2c3efc3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.02
@@ -517,6 +525,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock5_LOD0
       objectReference: {fileID: 0}
+    - target: {fileID: 1539770375662012, guid: c0a13742618afdb4cb2d9e33d51eac24, type: 3}
+      propertyPath: m_TagString
+      value: walls
+      objectReference: {fileID: 0}
     - target: {fileID: 4868015793844230, guid: c0a13742618afdb4cb2d9e33d51eac24, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.98
@@ -609,6 +621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock3_LOD0
       objectReference: {fileID: 0}
+    - target: {fileID: 1947133227643770, guid: a07bba0f0f6b70d428d5928a74460267, type: 3}
+      propertyPath: m_TagString
+      value: walls
+      objectReference: {fileID: 0}
     - target: {fileID: 4106854604787906, guid: a07bba0f0f6b70d428d5928a74460267, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.89
@@ -674,6 +690,10 @@ PrefabInstance:
     - target: {fileID: 1381760041697914, guid: 91539656a2852a24894b1408b15af8fa, type: 3}
       propertyPath: m_Name
       value: rock4_LOD0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381760041697914, guid: 91539656a2852a24894b1408b15af8fa, type: 3}
+      propertyPath: m_TagString
+      value: walls
       objectReference: {fileID: 0}
     - target: {fileID: 4820317572778310, guid: 91539656a2852a24894b1408b15af8fa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -828,6 +848,10 @@ PrefabInstance:
     - target: {fileID: 1947133227643770, guid: a07bba0f0f6b70d428d5928a74460267, type: 3}
       propertyPath: m_Name
       value: rock3_LOD0 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947133227643770, guid: a07bba0f0f6b70d428d5928a74460267, type: 3}
+      propertyPath: m_TagString
+      value: walls
       objectReference: {fileID: 0}
     - target: {fileID: 4106854604787906, guid: a07bba0f0f6b70d428d5928a74460267, type: 3}
       propertyPath: m_LocalScale.x
