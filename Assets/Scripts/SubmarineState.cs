@@ -84,4 +84,17 @@ public class SubmarineState : ScriptableObject
             OnMineralsChange?.Invoke(value);
         }
     }
+    
+    [SerializeField] private int minerals1;
+    public Action<int> OnMinerals1Change;
+
+    public int Minerals1
+    {
+        get => minerals;
+        set
+        {
+            minerals1 = value;
+            OnMinerals1Change?.Invoke(value);
+        }
+    }
 }
