@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -9,24 +10,33 @@ public class CollisionDamage : MonoBehaviour
     [SerializeField] private int collisionCooldown = 5;
     private bool _canApplyDamage = true;
 
+    private AudioSource collisionSound;
+    private float soundOffset = 0.3f;
+
+    private void Start()
+    {
+        collisionSound = GetComponent<AudioSource>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.CompareTag("fallingRocks")) 
+        collisionSound.time = soundOffset;
+
+        if (collision.transform.CompareTag("fallingRocks"))
         {
+            collisionSound.Play();
             submarineState.Health -= fallingRockDamage;
             return;
         }
 
 
-        if (!collision.transform.CompareTag("walls") || !_canApplyDamage)
+        if (collision.transform.CompareTag("walls") && _canApplyDamage)
         {
-            return;
+            collisionSound.Play();
+            submarineState.Health -= collisionDamage;
+            _canApplyDamage = false;
+            StartCoroutine(CollisionCooldown());
         }
-
-        submarineState.Health -= collisionDamage;
-        _canApplyDamage = false;
-        StartCoroutine(CollisionCooldown());
     }
 
 
