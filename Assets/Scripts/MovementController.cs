@@ -8,8 +8,8 @@ public class MovementController : MonoBehaviour
 
     private Rigidbody _rb;
 
-    private bool isRotatingLeft;
-    private bool isRotatingRight;
+    private bool _isRotatingLeft;
+    private bool _isRotatingRight;
 
 
     private void Start()
@@ -29,16 +29,16 @@ public class MovementController : MonoBehaviour
 
         _rb.AddForce(Vector3.up * (verticalAxis * speed));
         _rb.AddForce(Vector3.right * (horizontalAxis * speed));
-        HandeCameraMovement(currPosition.y);
+        HandeCameraMovement(currPosition);
         RotateSubmarine(horizontalAxis);
     }
 
 
-    private void HandeCameraMovement(float y)
+    private void HandeCameraMovement(Vector3 pos)
     {
         var cameraTransform = camera.transform;
         var cameraPosition = cameraTransform.position;
-        cameraTransform.position = new Vector3(cameraPosition.x, y, cameraPosition.z);
+        cameraTransform.position = new Vector3(pos.x, pos.y, cameraPosition.z);
     }
 
 
@@ -47,33 +47,33 @@ public class MovementController : MonoBehaviour
         var submarineRotationVelocity = new Vector3(0, 0, 0);
         if (horizontalAxis > 0)
         {
-            isRotatingRight = true;
-            isRotatingLeft = false;
+            _isRotatingRight = true;
+            _isRotatingLeft = false;
         }
 
-        if (_rb.rotation.y < 0.75 && isRotatingRight)
+        if (_rb.rotation.y < 0.75 && _isRotatingRight)
         {
             submarineRotationVelocity = new Vector3(0, 100, 0);
         }
         else
         {
-            isRotatingRight = false;
+            _isRotatingRight = false;
         }
 
 
         if (horizontalAxis < 0)
         {
-            isRotatingRight = false;
-            isRotatingLeft = true;
+            _isRotatingRight = false;
+            _isRotatingLeft = true;
         }
 
-        if (_rb.rotation.y > -0.75 && isRotatingLeft)
+        if (_rb.rotation.y > -0.75 && _isRotatingLeft)
         {
             submarineRotationVelocity = new Vector3(0, -100, 0);
         }
         else
         {
-            isRotatingLeft = false;
+            _isRotatingLeft = false;
         }
 
 
