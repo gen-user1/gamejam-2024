@@ -1,4 +1,3 @@
-using ScriptableObjects;
 using UnityEngine;
 
 public class SubmarineDamage : MonoBehaviour

@@ -1,5 +1,4 @@
 using System.Collections;
-using ScriptableObjects;
 using UnityEngine;
 
 public class CollisionDamage : MonoBehaviour

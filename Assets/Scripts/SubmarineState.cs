@@ -1,90 +1,87 @@
 using System;
 using UnityEngine;
 
-namespace ScriptableObjects
+[Serializable]
+[CreateAssetMenu(fileName = "SubmarineState", menuName = "ScriptableObjects/SubmarineState", order = 1)]
+public class SubmarineState : ScriptableObject
 {
-    [Serializable]
-    [CreateAssetMenu(fileName = "SubmarineState", menuName = "ScriptableObjects/SubmarineState", order = 1)]
-    public class SubmarineState : ScriptableObject
+    [SerializeField] private int maxHealth;
+    public Action<int> OnMaxHealthChange;
+
+    public int MaxHealth
     {
-        [SerializeField] private int maxHealth;
-        public Action<int> OnMaxHealthChange;
-
-        public int MaxHealth
+        get => maxHealth;
+        set
         {
-            get => maxHealth;
-            set
-            {
-                maxHealth = value;
-                OnHealthChange?.Invoke(value);
-            }
+            maxHealth = value;
+            OnHealthChange?.Invoke(value);
         }
+    }
 
 
-        [SerializeField] private int health;
-        public Action<int> OnHealthChange;
+    [SerializeField] private int health;
+    public Action<int> OnHealthChange;
 
-        public int Health
+    public int Health
+    {
+        get => health;
+        set
         {
-            get => health;
-            set
-            {
-                health = value;
-                OnHealthChange?.Invoke(value);
-            }
+            health = value;
+            OnHealthChange?.Invoke(value);
         }
+    }
 
-        [SerializeField] private int depth;
+    [SerializeField] private int depth;
 
-        public Action<int> OnDepthChange;
+    public Action<int> OnDepthChange;
 
-        public int Depth
+    public int Depth
+    {
+        get => depth;
+        set
         {
-            get => depth;
-            set
-            {
-                depth = value;
-                OnDepthChange?.Invoke(value);
-            }
+            depth = value;
+            OnDepthChange?.Invoke(value);
         }
+    }
 
-        [SerializeField] private int safeDepthLevel = -6;
-        public Action<int> OnSafeDepthLevelChange;
+    [SerializeField] private int safeDepthLevel = -6;
+    public Action<int> OnSafeDepthLevelChange;
 
-        public int SafeDepthLevel
+    public int SafeDepthLevel
+    {
+        get => safeDepthLevel;
+        set
         {
-            get => safeDepthLevel;
-            set
-            {
-                safeDepthLevel = value;
-                OnSafeDepthLevelChange?.Invoke(value);
-            }
+            safeDepthLevel = value;
+            OnSafeDepthLevelChange?.Invoke(value);
         }
+    }
 
-        [SerializeField] private int resistance;
-        public Action<int> OnResistanceChange;
+    [SerializeField] private int resistance;
+    public Action<int> OnResistanceChange;
 
-        public int Resistance
+    public int Resistance
+    {
+        get => resistance;
+        set
         {
-            get => resistance;
-            set
-            {
-                resistance = value;
-                OnResistanceChange?.Invoke(value);
-            }
+            resistance = value;
+            OnResistanceChange?.Invoke(value);
         }
+    }
 
-        [SerializeField] private int minerals;
-        public Action<int> OnMineralsChange;
+    [SerializeField] private int minerals;
+    public Action<int> OnMineralsChange;
 
-        public int Minerals
+    public int Minerals
+    {
+        get => minerals;
+        set
         {
-            get => minerals;
-            set
-            {
-                minerals = value;
-                OnMineralsChange?.Invoke(value);
-            }
+            minerals = value;
+            OnMineralsChange?.Invoke(value);
         }
     }
 }
