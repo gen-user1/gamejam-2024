@@ -9,7 +9,7 @@ public class CollisionDamage : MonoBehaviour
     private bool _canApplyDamage = true;
 
 
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (!collision.transform.CompareTag("walls") || !_canApplyDamage)
         {
@@ -22,7 +22,7 @@ public class CollisionDamage : MonoBehaviour
     }
 
 
-    IEnumerator CollisionCooldown()
+    private IEnumerator CollisionCooldown()
     {
         yield return new WaitForSeconds(collisionCooldown);
         _canApplyDamage = true;
