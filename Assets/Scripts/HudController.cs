@@ -7,6 +7,7 @@ public class HudController : MonoBehaviour
     [SerializeField] private RectTransform bar;
     [SerializeField] private TextMeshProUGUI resistanceValue;
     [SerializeField] private TextMeshProUGUI mineralsValue;
+    [SerializeField] private TextMeshProUGUI minerals1Value;
 
 
     private void Start()
@@ -19,6 +20,8 @@ public class HudController : MonoBehaviour
 
         SetMinerals(submarineState.Minerals);
         submarineState.OnMineralsChange += SetMinerals;
+
+        submarineState.OnMinerals1Change += SetMinerals1;
     }
 
     private void OnDestroy()
@@ -49,5 +52,10 @@ public class HudController : MonoBehaviour
     private void SetMinerals(int value)
     {
         mineralsValue.text = value.ToString();
+    }
+
+    private void SetMinerals1(int value)
+    {
+        minerals1Value.text = value.ToString();
     }
 }

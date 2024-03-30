@@ -28,8 +28,10 @@ public class ResourceCollector : MonoBehaviour
             case ResourceType.Mineral:
                 submarineState.Minerals += amount;
                 break;
+            case ResourceType.Mineral1:
+                submarineState.Minerals1 += amount;
+                break;
             default:
-                Debug.Log("Unknown resource type");
                 break;
         }
     }

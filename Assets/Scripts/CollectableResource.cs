@@ -4,7 +4,8 @@ using UnityEngine;
 [Serializable]
 public enum ResourceType
 {
-    Mineral
+    Mineral,
+    Mineral1
 }
 
 

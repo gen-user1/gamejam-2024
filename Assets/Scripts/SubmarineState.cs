@@ -46,7 +46,7 @@ public class SubmarineState : ScriptableObject
         }
     }
 
-    [SerializeField] private int safeDepthLevel = -6;
+    [SerializeField] private int safeDepthLevel = -50;
     public Action<int> OnSafeDepthLevelChange;
 
     public int SafeDepthLevel
@@ -90,7 +90,7 @@ public class SubmarineState : ScriptableObject
 
     public int Minerals1
     {
-        get => minerals;
+        get => minerals1;
         set
         {
             minerals1 = value;
