@@ -1022,7 +1022,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sub: {fileID: 1996605099}
-  camera: {fileID: 963194225}
 --- !u!1 &770956307
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,7 +1031,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 770956308}
-  - component: {fileID: 770956309}
   m_Layer: 5
   m_Name: HpBar
   m_TagString: Untagged
@@ -1060,18 +1058,6 @@ RectTransform:
   m_AnchoredPosition: {x: 20, y: -20}
   m_SizeDelta: {x: 200, y: 20}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &770956309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770956307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14ab133d24eb64e97ac5c59676071adc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &810033405
 PrefabInstance:
   m_ObjectHideFlags: 0
