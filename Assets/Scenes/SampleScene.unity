@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.702
   m_CustomReflection: {fileID: 8900000, guid: b2edd3146a154b04f920f368b991d659, type: 3}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: -0.0036108496, g: 0.0037005346, b: 0.03799881, a: 0.702}
+  m_IndirectSpecularColor: {r: -0.0036108384, g: 0.0037005388, b: 0.037998825, a: 0.702}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -668,6 +668,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1278678197}
+  - {fileID: 2026063770}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &467543310
@@ -7366,10 +7367,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: b693d083eea02554eaaeeee24a323567, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4106854604787906, guid: a07bba0f0f6b70d428d5928a74460267, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2026063770}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1947133227643770, guid: a07bba0f0f6b70d428d5928a74460267, type: 3}
       insertIndex: -1
@@ -8912,13 +8910,13 @@ Transform:
   m_GameObject: {fileID: 2026063769}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.23085454, y: 202, z: 0}
-  m_LocalScale: {x: 0.18181817, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 147.80002, z: 2}
+  m_LocalScale: {x: 1, y: 1.74, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1847920119}
   - {fileID: 1186352180}
-  m_Father: {fileID: 1278678197}
+  m_Father: {fileID: 443993684}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2037936327
 GameObject:
