@@ -33,8 +33,8 @@ public class InfiniteWorld : MonoBehaviour
             var newWallL = Instantiate(wallsL[wallPointer % wallsL.Count], wallsLContainer);
             var newWallR = Instantiate(wallsR[wallPointer % wallsR.Count], wallsRContainer);
 
-            newWallL.transform.position = currentWallL.transform.position - new Vector3(0, 10, 0);
-            newWallR.transform.position = currentWallR.transform.position - new Vector3(0, 10, 0);
+            newWallL.transform.position = currentWallL.transform.position - new Vector3(0, 50, 0);
+            newWallR.transform.position = currentWallR.transform.position - new Vector3(0, 50, 0);
 
             currentWallL = newWallL;
             currentWallR = newWallR;
