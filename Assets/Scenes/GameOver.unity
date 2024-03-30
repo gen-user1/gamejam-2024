@@ -442,14 +442,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Underwater
       objectReference: {fileID: 0}
-    - target: {fileID: 4531277807752180169, guid: ed13d6c16df1ff9469675ad10c637dfe, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4531277807752180173, guid: ed13d6c16df1ff9469675ad10c637dfe, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4531277807752180174, guid: ed13d6c16df1ff9469675ad10c637dfe, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -457,10 +449,6 @@ PrefabInstance:
     - target: {fileID: 4531277807752180174, guid: ed13d6c16df1ff9469675ad10c637dfe, type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4531277807752180174, guid: ed13d6c16df1ff9469675ad10c637dfe, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4531277807752180174, guid: ed13d6c16df1ff9469675ad10c637dfe, type: 3}
       propertyPath: m_AnchorMax.x
@@ -533,10 +521,6 @@ PrefabInstance:
     - target: {fileID: 4531277807752180174, guid: ed13d6c16df1ff9469675ad10c637dfe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4531277809385564187, guid: ed13d6c16df1ff9469675ad10c637dfe, type: 3}
-      propertyPath: m_Color.a
-      value: 0.25490198
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1585,6 +1569,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1696681340}
   - {fileID: 1850590063}
+  - {fileID: 2118514846}
   - {fileID: 1439797327}
   - {fileID: 1069342938}
-  - {fileID: 2118514846}
