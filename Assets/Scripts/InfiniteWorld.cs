@@ -41,9 +41,5 @@ public class InfiniteWorld : MonoBehaviour
             currentWallL = newWallL;
             currentWallR = newWallR;
         }
-
-        if ((transform.position.y - seafloor.transform.position.y) < 5) {
-            SceneSwitcher.GameFinished();
-        }
     }
 }

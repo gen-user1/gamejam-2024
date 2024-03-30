@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class MovementController : MonoBehaviour
@@ -5,6 +6,8 @@ public class MovementController : MonoBehaviour
     [SerializeField] private new Camera camera;
     [SerializeField] private float speed = 3;
     [SerializeField] private float maxHeight = -1f;
+
+    public GameObject seafloor;
 
     private Rigidbody _rb;
 
@@ -31,6 +34,10 @@ public class MovementController : MonoBehaviour
         _rb.AddForce(Vector3.right * (horizontalAxis * speed));
         HandeCameraMovement(currPosition);
         RotateSubmarine(horizontalAxis);
+        
+        if ((_rb.position.y - seafloor.transform.position.y) < 7) {
+            SceneSwitcher.GameFinished();
+        }
     }
 
 
@@ -38,7 +45,7 @@ public class MovementController : MonoBehaviour
     {
         var cameraTransform = camera.transform;
         var cameraPosition = cameraTransform.position;
-        cameraTransform.position = new Vector3(pos.x, pos.y, cameraPosition.z);
+        cameraTransform.position = new Vector3(pos.x, Math.Max(pos.y, seafloor.transform.position.y + 15), cameraPosition.z);
     }
 
 
