@@ -287,6 +287,53 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0}
+--- !u!1 &129976261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 129976263}
+  - component: {fileID: 129976262}
+  m_Layer: 0
+  m_Name: RockSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &129976262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129976261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ed3ea52aa8708338a2e20ff30141f64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rock1: {fileID: 2382740314522238659, guid: 4ccbeed66251b8978a8391eb5b4a1fc1, type: 3}
+  rock2: {fileID: 1008957416808899353, guid: 74d6d431e6ecc070096e2c22e4f06d90, type: 3}
+  rock3: {fileID: 6207901919151130885, guid: e48e2c8e672454362879d90757321917, type: 3}
+--- !u!4 &129976263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129976261}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.2528205, y: 8.980647, z: 0.10848272}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &418529647
 GameObject:
   m_ObjectHideFlags: 0
@@ -8502,6 +8549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   submarineState: {fileID: 11400000, guid: 6956863d03f8844a691293995090f2ab, type: 2}
   collisionDamage: 5
+  fallingRockDamage: 10
   collisionCooldown: 2
 --- !u!114 &1996605106
 MonoBehaviour:
@@ -8712,3 +8760,4 @@ SceneRoots:
   - {fileID: 424397910}
   - {fileID: 1007532114}
   - {fileID: 1405945579}
+  - {fileID: 129976263}
