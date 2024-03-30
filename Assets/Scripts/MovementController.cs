@@ -90,6 +90,9 @@ public class MovementController : MonoBehaviour
 
 
         Quaternion deltaRotation = Quaternion.Euler(submarineRotationVelocity * Time.fixedDeltaTime);
-        _rb.MoveRotation(_rb.rotation * deltaRotation);
+		Quaternion checkedValue = _rb.rotation * deltaRotation;
+		checkedValue.y =  Mathf.Clamp(checkedValue.y, -90f, 90f);
+		
+        _rb.MoveRotation(checkedValue);
     }
 }
