@@ -12,6 +12,8 @@ public class InfiniteWorld : MonoBehaviour
 
     public List<GameObject> wallsL = new();
 
+    public GameObject seafloor;
+
     private GameObject currentWallL;
 
     private GameObject currentWallR;
@@ -38,6 +40,10 @@ public class InfiniteWorld : MonoBehaviour
 
             currentWallL = newWallL;
             currentWallR = newWallR;
+        }
+
+        if ((transform.position.y - seafloor.transform.position.y) < 5) {
+            SceneSwitcher.GameFinished();
         }
     }
 }
