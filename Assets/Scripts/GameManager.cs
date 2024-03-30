@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int defaultResistance;
     [SerializeField] private int defaultMinerals;
 
-    void Start()
+    private void Start()
     {
         submarineState.MaxHealth = defaultMaxHp;
         submarineState.Health = defaultHp;

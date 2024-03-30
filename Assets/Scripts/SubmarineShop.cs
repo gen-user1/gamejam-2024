@@ -1,6 +1,3 @@
-using System;
-using System.Data;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,9 +7,10 @@ public class SubmarineShop : MonoBehaviour
     [SerializeField] private Button fixButton;
     [SerializeField] private Button resistButton;
     [SerializeField] private int fixHealthIncrease = 30;
+    [SerializeField] private int resistanceIncrease = 10;
 
-    private int FIX_PRICE = 3;
-    private int RESISTANCE_PRICE = 1;
+    [SerializeField] private int fixPrice = 3;
+    [SerializeField] private int resistancePrice = 1;
 
     private void Start()
     {
@@ -31,23 +29,23 @@ public class SubmarineShop : MonoBehaviour
 
     private void HandleFixButtonState(int value)
     {
-        fixButton.interactable = value >= FIX_PRICE;
+        fixButton.interactable = value >= fixPrice;
     }
     
     private void HandleResistButtonState(int value)
     {
-        resistButton.interactable = value >= RESISTANCE_PRICE;
+        resistButton.interactable = value >= resistancePrice;
     }
 
     public void FixSubmarine()
     {
         submarineState.Health += fixHealthIncrease;
-        submarineState.Minerals -= FIX_PRICE;
+        submarineState.Minerals -= fixPrice;
     }
 
     public void IncreaseResistance()
     {
-        submarineState.Resistance += 10;
-        submarineState.Minerals1 -= RESISTANCE_PRICE;
+        submarineState.Resistance += resistanceIncrease;
+        submarineState.Minerals1 -= resistancePrice;
     }
 }

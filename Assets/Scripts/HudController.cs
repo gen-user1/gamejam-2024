@@ -21,6 +21,7 @@ public class HudController : MonoBehaviour
         SetMinerals(submarineState.Minerals);
         submarineState.OnMineralsChange += SetMinerals;
 
+        SetMinerals(submarineState.Minerals1);
         submarineState.OnMinerals1Change += SetMinerals1;
     }
 
@@ -29,7 +30,7 @@ public class HudController : MonoBehaviour
         submarineState.OnHealthChange -= SetHpBarWidth;
         submarineState.OnResistanceChange -= SetResistance;
         submarineState.OnMineralsChange -= SetMinerals;
-
+        submarineState.OnMinerals1Change -= SetMinerals1;
     }
 
     private void SetHpBarWidth(int value)
