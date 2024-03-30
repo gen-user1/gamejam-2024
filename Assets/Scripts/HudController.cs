@@ -1,3 +1,4 @@
+using System.ComponentModel.Design;
 using TMPro;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class HudController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI mineralsValue;
     [SerializeField] private TextMeshProUGUI minerals1Value;
 
+    [SerializeField] private GameObject tutorial;
 
     private void Start()
     {
@@ -23,6 +25,7 @@ public class HudController : MonoBehaviour
 
         SetMinerals(submarineState.Minerals1);
         submarineState.OnMinerals1Change += SetMinerals1;
+        submarineState.OnDepthChange += HandleDepthChange;
     }
 
     private void OnDestroy()
@@ -31,6 +34,7 @@ public class HudController : MonoBehaviour
         submarineState.OnResistanceChange -= SetResistance;
         submarineState.OnMineralsChange -= SetMinerals;
         submarineState.OnMinerals1Change -= SetMinerals1;
+        submarineState.OnDepthChange -= HandleDepthChange;
     }
 
     private void SetHpBarWidth(int value)
@@ -43,6 +47,11 @@ public class HudController : MonoBehaviour
         }
 
         bar.localScale = new Vector3(newXScale, prevScale.y, prevScale.z);
+    }
+
+    private void HandleDepthChange(int value)
+    {
+        tutorial.SetActive(value < 10);
     }
 
     private void SetResistance(int value)
