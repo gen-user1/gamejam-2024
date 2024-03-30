@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.702
   m_CustomReflection: {fileID: 8900000, guid: b2edd3146a154b04f920f368b991d659, type: 3}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: -0.003610837, g: 0.0037005402, b: 0.037998818, a: 0.702}
+  m_IndirectSpecularColor: {r: -0.0036108496, g: 0.0037005346, b: 0.03799881, a: 0.702}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8473,7 +8473,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!114 &1996605104
 MonoBehaviour:
