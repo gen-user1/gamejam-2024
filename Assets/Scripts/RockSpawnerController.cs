@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class RockSpawner : MonoBehaviour
@@ -10,6 +11,7 @@ public class RockSpawner : MonoBehaviour
 
     private float lastTimeSpawn = 0;
     private List<GameObject> rocks = new();
+    private GameObject fallenRock;
     private int spawnTimeSeconds = 5;
     // Start is called before the first frame update
     void Start()
@@ -30,9 +32,19 @@ public class RockSpawner : MonoBehaviour
 
     private void SpawnNew() 
     {
+        gc();
+
         int index = Random.Range(0, rocks.Count);
         int xPos = Random.Range(0, 10);
-        Instantiate(rocks[index], new Vector3(xPos, 10, 0), Quaternion.identity);
+        fallenRock = Instantiate(rocks[index], new Vector3(xPos, 10, 0), Quaternion.identity);
         lastTimeSpawn = Time.time;
+    }
+
+    private void gc() {
+        if (fallenRock != null) {
+            var fr = fallenRock;
+            fallenRock = null;
+            GameObject.Destroy(fr);
+        }
     }
 }
