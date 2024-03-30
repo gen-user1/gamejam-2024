@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ResourceCollector : MonoBehaviour
 {
-    [SerializeField] private ResourcesState resourcesState;
+    [SerializeField] private SubmarineState submarineState;
 
     private void OnCollisionEnter(Collision other)
     {
@@ -27,7 +27,7 @@ public class ResourceCollector : MonoBehaviour
         switch (type)
         {
             case ResourceType.Mineral:
-                resourcesState.Minerals += amount;
+                submarineState.Minerals += amount;
                 break;
             default:
                 Debug.Log("Unknown resource type");

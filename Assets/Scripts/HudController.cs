@@ -7,7 +7,6 @@ namespace UI
     public class HudController : MonoBehaviour
     {
         [SerializeField] private SubmarineState submarineState;
-        [SerializeField] private ResourcesState resourcesState;
         [SerializeField] private RectTransform bar;
         [SerializeField] private TextMeshProUGUI resistanceValue;
         [SerializeField] private TextMeshProUGUI mineralsValue;
@@ -21,15 +20,15 @@ namespace UI
             SetResistance(submarineState.Resistance);
             submarineState.OnResistanceChange += SetResistance;
 
-            SetMinerals(resourcesState.Minerals);
-            resourcesState.OnMineralsChange += SetMinerals;
+            SetMinerals(submarineState.Minerals);
+            submarineState.OnMineralsChange += SetMinerals;
         }
 
         private void OnDestroy()
         {
             submarineState.OnHealthChange -= SetHpBarWidth;
             submarineState.OnResistanceChange -= SetResistance;
-            resourcesState.OnMineralsChange -= SetMinerals;
+            submarineState.OnMineralsChange -= SetMinerals;
 
         }
 
