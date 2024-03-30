@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,11 +13,17 @@ public class SubmarineShop : MonoBehaviour
     [SerializeField] private int fixPrice = 3;
     [SerializeField] private int resistancePrice = 1;
 
+    [SerializeField] private TextMeshProUGUI fixCostText;
+    [SerializeField] private TextMeshProUGUI resistanceCostText;
+
     private void Start()
     {
+        fixCostText.text = fixPrice.ToString();
+        resistanceCostText.text = resistancePrice.ToString();
+
         HandleFixButtonState(submarineState.Minerals);
         submarineState.OnMineralsChange += HandleFixButtonState;
-        
+
         HandleResistButtonState(submarineState.Minerals1);
         submarineState.OnMinerals1Change += HandleResistButtonState;
     }
@@ -31,7 +38,7 @@ public class SubmarineShop : MonoBehaviour
     {
         fixButton.interactable = value >= fixPrice;
     }
-    
+
     private void HandleResistButtonState(int value)
     {
         resistButton.interactable = value >= resistancePrice;
