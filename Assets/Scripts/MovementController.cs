@@ -17,11 +17,16 @@ public class MovementController : MonoBehaviour
     private void Update()
     {
         var horizontalAxis = Input.GetAxis("Horizontal");
+        var verticalAxis = Input.GetAxis("Vertical");
 
         var cameraTransform = camera.transform;
         var cameraPosition = cameraTransform.position;
         cameraTransform.position = new Vector3(cameraPosition.x, rigidbodyComponent.position.y, cameraPosition.z);
         RotateSubmarine(horizontalAxis);
+
+        if (transform.position.y > 0.4F) {
+            transform.position = new Vector3(transform.position.x, 0.4F, 0);
+        }
     }
 
     private void FixedUpdate()
