@@ -1309,6 +1309,7 @@ MonoBehaviour:
   - {fileID: 8778561903342565547, guid: 00e7e92c09d8d8c4b878628ca68d1163, type: 3}
   wallsL:
   - {fileID: 20686586411967030, guid: 001c2bb5b51913246b32479e049ea78b, type: 3}
+  seafloor: {fileID: 1278678196}
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0

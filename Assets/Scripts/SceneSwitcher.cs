@@ -17,4 +17,9 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("Scenes/GameOver");
     }
+
+    public static void GameFinished()
+    {
+        SceneManager.LoadSceneAsync("Scenes/GameFinished");
+    }
 }
