@@ -4,17 +4,20 @@ using UnityEngine;
 public class CollisionDamage : MonoBehaviour
 {
     [SerializeField] private SubmarineState submarineState;
+  
     [SerializeField] private int collisionDamage = 5;
     [SerializeField] private int fallingRockDamage = 10;
     [SerializeField] private int collisionCooldown = 5;
     private bool _canApplyDamage = true;
 
-    private AudioSource _collisionSound;
-    private const float SoundOffset = 0.3f;
+    private AudioSource collisionSound;
+    private FlashDamageIndicator flashDamageIndicator;
+    private float soundOffset = 0.3f;
 
     private void Start()
     {
-        _collisionSound = GetComponent<AudioSource>();
+        collisionSound = GetComponent<AudioSource>();
+        flashDamageIndicator = GetComponent<FlashDamageIndicator>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -23,6 +26,7 @@ public class CollisionDamage : MonoBehaviour
         {
             PlayCollisionSound();
             submarineState.Health -= fallingRockDamage;
+            flashDamageIndicator.Flash();
             return;
         }
 
@@ -30,11 +34,11 @@ public class CollisionDamage : MonoBehaviour
         {
             PlayCollisionSound();
             submarineState.Health -= collisionDamage;
+            flashDamageIndicator.Flash();
             _canApplyDamage = false;
             StartCoroutine(CollisionCooldown());
         }
     }
-
     private void PlayCollisionSound()
     {
         _collisionSound.time = SoundOffset;
