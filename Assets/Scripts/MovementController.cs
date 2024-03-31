@@ -4,11 +4,14 @@ using UnityEngine;
 public class MovementController : MonoBehaviour
 {
     [SerializeField] private SubmarineState submarineState;
+    [SerializeField] private GameObject canvas;
     [SerializeField] private new Camera camera;
     [SerializeField] private float speed = 3;
     [SerializeField] private float maxHeight = -1f;
 
     public GameObject seafloor;
+
+    private SubmarineShop submarineShop;
 
     private Rigidbody _rb;
 
@@ -19,6 +22,19 @@ public class MovementController : MonoBehaviour
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        submarineShop = canvas.GetComponent<SubmarineShop>();
+    }
+
+    private void Update() {
+        var fixButton = Input.GetKeyUp(KeyCode.F);
+        var resistButton = Input.GetKeyUp(KeyCode.R);
+        
+        if (fixButton) {
+            submarineShop.FixSubmarine();
+        }
+        if (resistButton) {
+            submarineShop.IncreaseResistance();
+        }
     }
 
     private void FixedUpdate()

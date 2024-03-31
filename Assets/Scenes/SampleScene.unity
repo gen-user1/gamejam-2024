@@ -7993,7 +7993,10 @@ MonoBehaviour:
     Your goal is to reach the bottom. The deeper you get, the
     higher pressure there is, which will damage your submarine. Collect resources
     to upgrade your submarines'' pressure resistance and to repair it when needed.
-    Keep safe, dont crush into the riffs and beware of the falling rocks.'
+    Keep safe, dont crush into the riffs and beware of the falling rocks.
+
+    WASD
+    - for movement, F - to fix sub, R - increase resistance'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9167,6 +9170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   submarineState: {fileID: 11400000, guid: 6956863d03f8844a691293995090f2ab, type: 2}
+  canvas: {fileID: 1593765690}
   camera: {fileID: 963194227}
   speed: 10
   maxHeight: -1
