@@ -16,6 +16,8 @@ public class SubmarineShop : MonoBehaviour
     [SerializeField] private TextMeshProUGUI fixCostText;
     [SerializeField] private TextMeshProUGUI resistanceCostText;
 
+    private int modeMupliplier;
+
     private void Start()
     {
         fixCostText.text = fixPrice.ToString();
@@ -26,6 +28,8 @@ public class SubmarineShop : MonoBehaviour
 
         HandleResistButtonState(submarineState.Minerals1);
         submarineState.OnMinerals1Change += HandleResistButtonState;
+
+        modeMupliplier = PlayerPrefs.GetInt("modeMultiplier", 1);
     }
 
     private void OnDestroy()
@@ -50,7 +54,7 @@ public class SubmarineShop : MonoBehaviour
         {
             return;
         }
-        submarineState.Health += fixHealthIncrease;
+        submarineState.Health += fixHealthIncrease * modeMupliplier;
         submarineState.Minerals -= fixPrice;
     }
 
@@ -60,7 +64,7 @@ public class SubmarineShop : MonoBehaviour
         {
             return;
         }
-        submarineState.Resistance += resistanceIncrease;
+        submarineState.Resistance += resistanceIncrease * modeMupliplier;
         submarineState.Minerals1 -= resistancePrice;
 
     }

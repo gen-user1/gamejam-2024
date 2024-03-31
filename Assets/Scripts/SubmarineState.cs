@@ -97,4 +97,17 @@ public class SubmarineState : ScriptableObject
             OnMinerals1Change?.Invoke(value);
         }
     }
+    
+    [SerializeField] private int modeMultiplier = 1;
+    public Action<int> OnModeMultiplierChange;
+
+    public int ModeMultiplier
+    {
+        get => modeMultiplier;
+        set
+        {
+            modeMultiplier = value;
+            OnModeMultiplierChange?.Invoke(value);
+        }
+    }
 }
