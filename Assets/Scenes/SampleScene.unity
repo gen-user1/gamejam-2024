@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.702
   m_CustomReflection: {fileID: 8900000, guid: b2edd3146a154b04f920f368b991d659, type: 3}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: -0.0036108384, g: 0.0037005388, b: 0.037998825, a: 0.702}
+  m_IndirectSpecularColor: {r: -0.0036108496, g: 0.0037005346, b: 0.03799881, a: 0.702}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9020,6 +9020,7 @@ GameObject:
   - component: {fileID: 1996605105}
   - component: {fileID: 1996605106}
   - component: {fileID: 1996605108}
+  - component: {fileID: 1996605109}
   m_Layer: 0
   m_Name: Model
   m_TagString: submarine
@@ -9271,6 +9272,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1996605109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996605099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c0a3bfed8dbdecc7b039e6f0aeb919f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 56de06f10b8c79746a87d6799ed4fa1f, type: 2}
 --- !u!1 &2026063769
 GameObject:
   m_ObjectHideFlags: 0
