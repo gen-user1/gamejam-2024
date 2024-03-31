@@ -10,13 +10,13 @@ public class CollisionDamage : MonoBehaviour
     [SerializeField] private int collisionCooldown = 5;
     private bool _canApplyDamage = true;
 
-    private AudioSource collisionSound;
+    private AudioSource _collisionSound;
     private FlashDamageIndicator flashDamageIndicator;
-    private float soundOffset = 0.3f;
+    private const float SoundOffset = 0.3f;
 
     private void Start()
     {
-        collisionSound = GetComponent<AudioSource>();
+        _collisionSound = GetComponent<AudioSource>();
         flashDamageIndicator = GetComponent<FlashDamageIndicator>();
     }
 
