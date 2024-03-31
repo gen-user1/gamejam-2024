@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class LookAtCamera : MonoBehaviour
 {
-    private new Camera _camera;
+    private Camera _camera;
 
     private void Start()
     {
