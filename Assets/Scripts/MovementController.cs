@@ -11,6 +11,8 @@ public class MovementController : MonoBehaviour
 
     public GameObject seafloor;
 
+    private Joystick joystick;
+
     private SubmarineShop submarineShop;
 
     private Rigidbody _rb;
@@ -18,11 +20,25 @@ public class MovementController : MonoBehaviour
     private bool _isRotatingLeft;
     private bool _isRotatingRight;
 
+    private Func<float> getVerticalAxis;
+    private Func<float> getHorizontalAxis;
+
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
         submarineShop = canvas.GetComponent<SubmarineShop>();
+        joystick = canvas.GetComponentInChildren<Joystick>();
+
+        if (joystick != null) {
+            getVerticalAxis = () => joystick.Vertical;
+            getHorizontalAxis = () => joystick.Horizontal;
+        } else {
+            getVerticalAxis = () => Input.GetAxis("Vertical");
+            getHorizontalAxis = () => Input.GetAxis("Horizontal");
+        }
+
+        Debug.Log("Joystick " + (joystick == null ? "is absent": "is present"));
     }
 
     private void Update() {
@@ -39,8 +55,8 @@ public class MovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        var verticalAxis = Input.GetAxis("Vertical");
-        var horizontalAxis = Input.GetAxis("Horizontal");
+        var verticalAxis = getVerticalAxis();
+        var horizontalAxis = getHorizontalAxis();
         var currPosition = transform.position;
         if (currPosition.y > maxHeight)
         {
